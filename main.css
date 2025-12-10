@@ -1,0 +1,72 @@
+/* styles/main.css */
+
+/* Link styles */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Simple text helpers */
+.bold {
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.justify {
+    text-align: justify;
+}
+
+/* Left menu links stacked nicely */
+.leftmenu a {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #333333;
+}
+
+/* Right menu styling */
+.rightmenu h4 {
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.rightmenu {
+    font-size: 0.8rem;
+}
+
+/* Main content headings */
+.mainbody h1 {
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+.mainbody h2 {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+}
+
+/* Make content readable */
+.mainbody p,
+.mainbody li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+/* Resume-specific tweaks */
+.justify {
+    text-align: left;      /* no more weird spacing */
+}
+
+.resume-content {
+    max-width: 750px;      /* keep text from stretching too wide */
+}
+
+.justify {
+    text-align: left;
+}

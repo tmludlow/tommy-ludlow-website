@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tommy Ludlow – Résumé</title>
+
+    <!-- CSS is in the styles/ folder, same as index.html -->
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="common header">
+        <span class="bold">Tommy Ludlow</span>
+
+        <span class="subheader">
+            <a href="index.html" id="top">Home</a> |
+            <a href="resume.html">Résumé</a> |
+            <a href="scratch.html">Scratch Page</a>
+        </span>
+    </div>
+
+    <!-- LEFT MENU -->
+    <div class="common leftmenu">
+        <a href="#mission">Mission</a>
+        <a href="#edu">Education</a>
+        <a href="#exp">Experience</a>
+        <a href="#skills">Skills</a>
+    </div>
+
+    <!-- MAIN BODY -->
+    <div class="common mainbody">
+   
+
+        <h1>Résumé</h1>
+
+        <!-- Mission Statement -->
+        <h2 id="mission">Mission Statement</h2>
+        <p class="justify">
+            My goal is to use entrepreneurship, sales, and leadership to build companies
+            that create real value for people while helping others grow. I’m focused on
+            learning how to start, run, and scale businesses that are both profitable
+            and meaningful.
+        </p>
+
+        <!-- EDUCATION -->
+        <h2 id="edu">Education</h2>
+        <ul>
+            <li>
+                <strong>Brigham Young University</strong> — B.S. in Entrepreneurial Management  
+                <br />2023 – 2028  
+                <br />Relevant focus areas: entrepreneurship, business strategy, leadership, and
+                introductory web development.
+            </li>
+        </ul>
+
+        <!-- EXPERIENCE -->
+        <h2 id="exp">Experience</h2>
+        <ul>
+            <li>
+                <strong>Sales Manager</strong> — Freedom Forever  
+                <br />2024 – Present  
+                <ul>
+                    <li>Taught new reps how to knock doors and sell solar effectively.</li>
+                    <li>Developed leadership, coaching, and motivational speaking skills.</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Missionary</strong> — The Church of Jesus Christ of Latter-day Saints  
+                <br />2023 – 2024  
+                <ul>
+                    <li>Taught people about coming closer to God and living gospel principles.</li>
+                    <li>Built strong communication, service, and people skills.</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Founder</strong> — No Pressure, Pressure Washing  
+                <br />2021 – 2023  
+                <ul>
+                    <li>Started and ran a residential pressure washing company.</li>
+                    <li>Handled marketing, scheduling, customer communication, and operations.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- SKILLS -->
+        <h2 id="skills">Skills</h2>
+        <ul>
+            <li>Sales & Entrepreneurship</li>
+            <li>Leadership, Management, and Motivational Speaking</li>
+            <li>HTML, CSS, Web Development</li>
+            <li>Excel & Solver (optimization with Excel)</li>
+            <li>Tableau & Flow Charting</li>
+            <li>Marketing and Business Strategy</li>
+        </ul>
+
+        <p>
+            <a href="#top">Back to top</a>
+        </p>
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="common rightmenu">
+        <h4>Contact</h4>
+        <p>
+            Email:<br />
+            <a href="mailto:T.m.ludlow3@gmail.com">T.m.ludlow3@gmail.com</a>
+        </p>
+        <p>
+            LinkedIn:<br />
+            <a href="https://www.linkedin.com/in/thomas-ludlow-43b78624b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+               target="_blank">
+               linkedin.com/in/thomas-ludlow
+            </a>
+        </p>
+
+        <h4>Location</h4>
+        <p>
+            Brigham Young University<br />
+            Provo, Utah
+        </p>
+</div>
+
+    <!-- FOOTER -->
+    <div class="common footer">
+        &copy; <span id="year"></span> Tommy Ludlow | IS Website
+    </div>
+
+    <script>
+        // update year in footer
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

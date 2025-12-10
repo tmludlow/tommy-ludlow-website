@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MMA Training Drill Generator</title>
+
+    <!-- All styles for the app live right here -->
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #0b1020;
+            color: #f5f5f5;
+            margin: 0;
+        }
+
+        .app-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 16px 40px;
+        }
+
+        .app-card {
+            background: #141a33;
+            border-radius: 12px;
+            padding: 20px 22px 26px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
+        }
+
+        h1 {
+            margin-top: 0;
+            text-align: center;
+            font-size: 1.9rem;
+        }
+
+        p.subtitle {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #c3c7ff;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+            margin-bottom: 18px;
+            justify-content: center;
+        }
+
+        select, button {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        select {
+            background: #1b2342;
+            color: #f5f5f5;
+        }
+
+        button {
+            background: #4ade80;
+            color: #062814;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            filter: brightness(1.08);
+        }
+
+        .drill-output {
+            background: #111829;
+            border-radius: 10px;
+            padding: 16px 18px;
+            margin-top: 8px;
+            min-height: 100px;
+        }
+
+        .drill-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .drill-meta {
+            font-size: 0.85rem;
+            color: #aeb4ff;
+            margin-bottom: 4px;
+        }
+
+        .drill-description {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .counter {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #a0a4d6;
+            text-align: right;
+        }
+
+        .history {
+            margin-top: 18px;
+            font-size: 0.9rem;
+        }
+
+        .history h3 {
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .history ul {
+            padding-left: 18px;
+            margin: 0;
+        }
+
+        .history li {
+            margin-bottom: 4px;
+        }
+
+        .nav-links {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            color: #93c5fd;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-wrapper">
+    <div class="app-card">
+        <h1>MMA Training Drill Generator</h1>
+        <p class="subtitle">
+            Stuck on what to train? Pick a focus and get a random, specific drill
+            you can use for your next session.
+        </p>
+
+        <div class="controls">
+            <label for="category">Focus:</label>
+            <select id="category">
+                <option value="any">Any</option>
+                <option value="standup">Stand-up / Striking</option>
+                <option value="grappling">Grappling / BJJ</option>
+                <option value="conditioning">Conditioning</option>
+                <option value="mindset">Mindset / Visualization</option>
+            </select>
+
+            <button id="generateBtn">Generate Drill</button>
+        </div>
+
+        <div class="drill-output" id="drillOutput">
+            <div class="drill-title">Click “Generate Drill” to get started.</div>
+            <div class="drill-description">
+                You’ll see a simple, actionable drill you can do today—either alone,
+                with a partner, or in class.
+            </div>
+        </div>
+
+        <div class="counter" id="counter">
+            Drills generated: 0
+        </div>
+
+        <div class="history">
+            <h3>Recent Drills</h3>
+            <ul id="historyList">
+                <!-- recent drills appear here -->
+            </ul>
+        </div>
+
+        <div class="nav-links">
+            <a href="scratch.html">← Back to Scratch Page</a>
+            <a href="index.html">Home</a>
+        </div>
+    </div>
+</div>
+
+<!-- All JavaScript for the app lives right here -->
+<script>
+    const drills = [
+        {
+            category: "standup",
+            title: "Jab–Cross Distance Drill",
+            type: "Stand-up",
+            description:
+                "For 3-minute rounds, work only your jab and cross while focusing on distance. Step in on the jab, rotate on the cross, then exit on an angle. Partner should give light movement but no counters."
+        },
+        {
+            category: "standup",
+            title: "Low Kick Check & Counter",
+            type: "Stand-up",
+            description:
+                "Partner throws light low kicks. Your only job is to check properly (turn knee out, shin to shin) and immediately counter with a straight cross or a calf kick of your own."
+        },
+        {
+            category: "standup",
+            title: "Slip Line Head Movement",
+            type: "Stand-up",
+            description:
+                "Tie a rope across the room at head height. Shadowbox while moving forward and backward under the line—slipping left, right, rolling under—keeping your hands up and throwing light combos as you move."
+        },
+        {
+            category: "grappling",
+            title: "Ashi Garami Entry Reps",
+            type: "Grappling",
+            description:
+                "From seated open guard, drill your favorite ashi garami entry 10 times per side without resistance. Then have your partner give 20–30% resistance and focus on staying tight and controlling the hip line."
+        },
+        {
+            category: "grappling",
+            title: "Back Control Ride Time",
+            type: "Grappling",
+            description:
+                "Start with hooks and seatbelt from the back. Your only goal is to maintain back control for 60 seconds while your partner tries to escape. Switch every minute. Focus on staying glued and following their hips."
+        },
+        {
+            category: "grappling",
+            title: "Mount Escape Intervals",
+            type: "Grappling",
+            description:
+                "Partner mounts you with moderate pressure. You have 30 seconds to hit any solid escape (upa, elbow escape, knee-elbow). Reset and repeat for 5–8 rounds, then switch roles."
+        },
+        {
+            category: "conditioning",
+            title: "Shark Tank Rounds",
+            type: "Conditioning",
+            description:
+                "Pick one main position (e.g., guard or clinch). Every 60–90 seconds, a fresh partner rotates in while you stay in. Your only goal: survive, stay technical, and keep breathing under control."
+        },
+        {
+            category: "conditioning",
+            title: "Shadowboxing Sprints",
+            type: "Conditioning",
+            description:
+                "Alternate 20 seconds of explosive shadowboxing (full speed, good form) with 40 seconds of light movement and breathing drills. Repeat for 8–10 rounds."
+        },
+        {
+            category: "mindset",
+            title: "Fight Visualization Session",
+            type: "Mindset",
+            description:
+                "Sit or lie down, close your eyes, and mentally walk through a full round. Picture walking to the cage, hearing the crowd, touching gloves, and executing your A-game. Keep it positive and detailed for 10 minutes."
+        },
+        {
+            category: "mindset",
+            title: "Confidence Reps Journal",
+            type: "Mindset",
+            description:
+                "After training, write down 3 small wins from today (a sweep, a combo you landed, a round you pushed through). Read your last 10 entries before your next hard session."
+        }
+    ];
+
+    const generateBtn = document.getElementById("generateBtn");
+    const categorySelect = document.getElementById("category");
+    const drillOutput = document.getElementById("drillOutput");
+    const counterEl = document.getElementById("counter");
+    const historyList = document.getElementById("historyList");
+
+    let count = 0;
+    const recentTitles = [];
+
+    function getRandomDrill(category) {
+        const pool = category === "any"
+            ? drills
+            : drills.filter(d => d.category === category);
+
+        const index = Math.floor(Math.random() * pool.length);
+        return pool[index];
+    }
+
+    function updateHistory(title) {
+        recentTitles.unshift(title);
+        if (recentTitles.length > 5) {
+            recentTitles.pop();
+        }
+
+        historyList.innerHTML = "";
+        recentTitles.forEach(t => {
+            const li = document.createElement("li");
+            li.textContent = t;
+            historyList.appendChild(li);
+        });
+    }
+
+    generateBtn.addEventListener("click", () => {
+        const category = categorySelect.value;
+        const drill = getRandomDrill(category);
+
+        drillOutput.innerHTML = `
+            <div class="drill-title">${drill.title}</div>
+            <div class="drill-meta">${drill.type} · Focus: ${drill.category}</div>
+            <div class="drill-description">${drill.description}</div>
+        `;
+
+        count++;
+        counterEl.textContent = "Drills generated: " + count;
+
+        updateHistory(drill.title);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+/* styles/scratch.css */
+/* Custom styles JUST for the scratch page */
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background-color: #f4f7fb; /* custom background color */
+    color: #222222;
+    margin: 0;
+}
+
+/* main wrapper div */
+.scratch-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* header div */
+.scratch-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* section divs */
+.scratch-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+}
+
+/* links back to top / app */
+.anchor-links a {
+    margin-right: 10px;
+}
+
+/* nested list styling */
+ol {
+    margin-left: 20px;
+}
+
+ul {
+    margin-left: 25px;
+}
+
+/* YouTube & Tableau containers */
+.video-container,
+.tableau-container {
+    text-align: center;
+}
+
+.video-container iframe,
+.tableau-container iframe {
+    max-width: 100%;
+    border: none;
+}
+/* Full-page background */
+body {
+    background-color: lightblue;  /* light grey */
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Center white card for the scratch content */
+.scratch-wrapper {
+    background-color: grey;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+.scratch-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 15px;
+    background-color: #eee;
+    border-radius: 6px;
+    font-size: 14px;
+}

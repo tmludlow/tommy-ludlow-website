@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tommy Ludlow – Portfolio</title>
+
+    <!-- CORRECT PATHS — CSS IS IN THE styles/ FOLDER -->
+    <link rel="stylesheet" href="styles/layouts.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="common header">
+        <span class="bold">Tommy Ludlow</span>
+
+        <span class="subheader">
+            <a href="index.html" id="top">Home</a> |
+            <a href="resume.html">Résumé</a> |
+            <a href="scratch.html">Scratch Page</a>
+        </span>
+    </div>
+
+    <!-- LEFT MENU -->
+    <div class="common leftmenu">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="common mainbody">
+        <h1 id="about">Hi, I'm Tommy Ludlow</h1>
+        <p class="justify">
+            I’m studying entrepreneurship at Brigham Young University and working on starting a company.
+            I’m originally from California and passionate about building businesses, learning web
+            development, and creating things that provide real value to people.
+        </p>
+
+        <h2 id="experience">What I’m Working On</h2>
+        <ul>
+            <li>Major in Entrepreneurial Management at BYU (Class of 2028)</li>
+            <li>Sales Manager at Freedom Forever, teaching people how to knock doors selling solar</li>
+            <li>Founder of No Pressure, a residential pressure washing company</li>
+        </ul>
+
+        <h2>Key Skills</h2>
+        <ul>
+            <li>Sales & Entrepreneurship</li>
+            <li>Leadership, Management, and Motivational Speaking</li>
+            <li>HTML, CSS, Web Development</li>
+            <li>Excel, Solver (optimization), Tableau, Flow Charting</li>
+            <li>Marketing and Business Strategy</li>
+        </ul>
+
+        <h2 id="contact">Contact</h2>
+        <p>
+            Email:
+            <a href="mailto:T.m.ludlow3@gmail.com">T.m.ludlow3@gmail.com</a>
+        </p>
+        <p>
+            LinkedIn:
+            <a href="https://www.linkedin.com/in/thomas-ludlow-43b78624b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+               target="_blank">
+               View my LinkedIn profile
+            </a>
+        </p>
+
+        <p>
+            You can also view my full <a href="resume.html">HTML résumé</a> for more details
+            about my education, experience, and skills.
+        </p>
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="common rightmenu">
+        <h4>Quick Info</h4>
+        <p>
+            School: Brigham Young University<br />
+            Major: Entrepreneurial Management<br />
+            Graduation: 2028<br />
+            Location: Provo, Utah
+        </p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="common footer">
+        &copy; <span id="year"></span> Tommy Ludlow | IS Website
+    </div>
+
+    <script>
+        // update year in footer
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

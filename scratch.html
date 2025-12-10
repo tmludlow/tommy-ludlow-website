@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tommy Ludlow – Scratch Page</title>
+
+    <!-- CUSTOM scratch stylesheet -->
+    <link rel="stylesheet" href="styles/scratch.css" />
+</head>
+<body>
+
+    <!-- on-page anchor at the top -->
+    <div id="top"></div>
+
+    <div class="scratch-wrapper">
+        <!-- HEADER DIV -->
+        <div class="scratch-header">
+            <h1>Tommy’s Scratch Page – Jiu-Jitsu & Data</h1>
+            <p>
+                This page is built completely from scratch to show HTML & CSS skills:
+                nested lists, images, video, Tableau, anchors, and a small web app.
+            </p>
+            <p>
+                <a href="index.html">Back to Professional Site</a> |
+                <a href="resume.html">View My Résumé</a>
+            </p>
+        </div>
+
+        <!-- NESTED LIST SECTION -->
+        <div class="scratch-section" id="positions">
+            <h2>Favorite Jiu-Jitsu Positions (Nested List)</h2>
+            <p>Here is an ordered list with an unordered list embedded inside:</p>
+
+            <ol>
+                <li>Guard
+                    <ul>
+                        <li>Closed guard</li>
+                        <li>De La Riva</li>
+                        <li>Half guard</li>
+                    </ul>
+                </li>
+                <li>Top Game
+                    <ul>
+                        <li>Side control</li>
+                        <li>Mount</li>
+                        <li>Back control</li>
+                    </ul>
+                </li>
+                <li>Leg Entanglements
+                    <ul>
+                        <li>Ashi garami</li>
+                        <li>Outside ashi</li>
+                        <li>50/50</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <!-- IMAGE SECTION -->
+        <div class="scratch-section">
+            <h2>Training Jiu-Jitsu</h2>
+           
+            <div class="image-container">
+                <!-- Replace images/bjj.jpg with your own image path -->
+                <img src="images/bjj.jpg" alt="Jiu-jitsu training" width="400" />
+            </div>
+        </div>
+
+        <!-- YOUTUBE VIDEO SECTION -->
+        <div class="scratch-section">
+            <h2>How to get started in BJJ Youtube video</video></h2>
+           
+<div class="video-container">             
+    <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/dLHUIgyhjNE?si=6h265e9yoMSNfTTK" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+</iframe>
+            </div>
+        </div>
+
+        <!-- TABLEAU SECTION -->
+        <div class="scratch-section">
+            <h2>Interactive Tableau Visualization</h2>
+            <p>
+                Below is an example of a live Tableau Public visualization embedded in the page.
+            </p>
+            <div class="tableau-container">
+                <!-- Example Tableau Public embed iframe -->
+               <div class='tableauPlaceholder' 
+    id='viz1765326747212' 
+    style='position: relative'><noscript><a 
+    href='#'><img alt='Dominance of UFC Champions ' 
+    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Th&#47;TheDominanceofUFCChampions&#47;DominanceofUFCChampions&#47;1_rss.png' 
+    style='border: none' /></a></noscript><object 
+    class='tableauViz'  style='display:none;'><param 
+    name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param 
+    name='embed_code_version' 
+    value='3' /> <param name='site_root' 
+    value='' /><param name='name' 
+    value='TheDominanceofUFCChampions&#47;DominanceofUFCChampions' /><param 
+    name='tabs' 
+    value='no' /><param 
+    name='toolbar' 
+    value='yes' /><param 
+    name='static_image' 
+    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Th&#47;TheDominanceofUFCChampions&#47;DominanceofUFCChampions&#47;1.png' /> <param 
+    name='animate_transition' 
+    value='yes' /><param 
+    name='display_static_image' 
+    value='yes' /><param 
+    name='display_spinner' 
+    value='yes' /><param 
+    name='display_overlay' value='yes' /><param 
+    name='display_count' value='yes' /><param 
+    name='language' value='en-US' /></object></div>                
+    <script type='text/javascript'>                    
+    var divElement = document.getElementById('viz1765326747212');                    
+    var vizElement = divElement.getElementsByTagName('object')[0];                   
+     vizElement.style.width='1366px';vizElement.style.height='767px';                    
+     var scriptElement = document.createElement('script');                    
+     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+     vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+            </div>
+        </div>
+
+        <!-- APP LINK SECTION -->
+        <div class="scratch-section anchor-links" id="app-link">
+            <h2>Small Web App</h2>
+            <p>
+                I also created a small web app in collaboration with AI.  
+                You can try it here:
+            </p>
+            <p>
+                <a href="app.html">Open the Web App</a>
+            </p>
+
+            <p>
+                <a href="#top">Back to top</a> |
+                <a href="#positions">Jump to Jiu-Jitsu Positions</a>
+            </p>
+        </div>
+    </div>
+<div class="scratch-footer">
+    <p>Thanks for visiting my scratch page!</p>
+</div>
+</body>
+</html>
