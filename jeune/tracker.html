@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cycle tracker | Jeune</title>
+  <meta name="description" content="Log your period, browse any month and see which phase and blend goes with each day.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="tracker.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="Home"><span data-brand>Jeune</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html#cycle">The cycle</a>
+      <a href="index.html#blends">Blends</a>
+      <a href="index.html#included">What's included</a>
+      <a href="tracker.html" aria-current="page">Cycle tracker</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="nav-tracker" href="index.html">Home</a>
+      <a class="btn btn-primary btn-sm" href="index.html#order">Pre-order</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="tr-hero">
+    <div class="container center narrow">
+      <p class="eyebrow">Cycle tracker</p>
+      <h1>Find your day.</h1>
+      <p class="lede">Log when your period starts, then browse any month. Tap a day to see which phase you were in, and which blend goes with it.</p>
+    </div>
+  </section>
+
+  <section class="container tr-layout">
+
+    <!-- CALENDAR -->
+    <div class="card cal-card">
+      <div class="cal-head">
+        <button class="nav-btn" id="calPrev" type="button" aria-label="Previous month">‹</button>
+        <h2 class="cal-title" id="calTitle" aria-live="polite">Month</h2>
+        <button class="nav-btn" id="calNext" type="button" aria-label="Next month">›</button>
+        <button class="btn btn-ghost btn-sm" id="calToday" type="button">Today</button>
+      </div>
+
+      <p class="cal-empty" id="calEmpty" hidden>Add the first day of your last period (on the right, or by tapping a day) to see your phases.</p>
+
+      <div class="cal-week" aria-hidden="true">
+        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+      </div>
+      <div class="cal-grid" id="calGrid" role="group" aria-label="Calendar days"></div>
+
+      <ul class="legend" aria-label="Legend">
+        <li><i style="--c:var(--menstrual)"></i>Menstrual · days 1–5</li>
+        <li><i style="--c:var(--follicular)"></i>Follicular · days 6–11</li>
+        <li><i style="--c:var(--luteal)"></i>Luteal · day 12 on</li>
+        <li><span class="lg-start" aria-hidden="true"></span>Period start you logged</li>
+      </ul>
+    </div>
+
+    <aside class="tr-side">
+
+      <!-- SELECTED DAY -->
+      <div class="card detail" id="detail" aria-live="polite">
+        <div class="detail-empty" id="dEmpty">
+          <p class="eyebrow" id="dEmptyDate"></p>
+          <p>Mark a day as the first day of a period to start tracking. Your phases will fill in across the calendar.</p>
+        </div>
+
+        <div class="detail-body" id="dBody" hidden>
+          <div class="ring-wrap">
+            <svg viewBox="0 0 220 220" class="ring" id="ring" role="img" aria-label="Cycle ring"></svg>
+            <div class="ring-center">
+              <span class="ring-day" id="ringDay"></span>
+              <span class="ring-phase" id="ringPhase"></span>
+            </div>
+          </div>
+          <p class="eyebrow" id="dDate"></p>
+          <h3 class="d-phase"><i id="dDot"></i><span id="dPhaseText"></span></h3>
+          <p class="muted" id="dDayOf"></p>
+          <p class="take" id="dTake"></p>
+          <p class="d-tag" id="dTagline"></p>
+          <p class="muted" id="dBlurb"></p>
+          <p class="muted" id="dNext"></p>
+          <p class="fineprint" id="dNote"></p>
+        </div>
+
+        <div class="detail-actions">
+          <button class="btn btn-outline btn-sm" id="dMark" type="button"></button>
+          <p class="fineprint" id="dMarkNote" hidden></p>
+        </div>
+      </div>
+
+      <!-- SETUP -->
+      <div class="card setup">
+        <h3>Your cycle</h3>
+        <form id="setupForm" novalidate>
+          <label class="field">
+            <span>First day of a period</span>
+            <input type="date" id="startInput">
+          </label>
+          <button class="btn btn-primary btn-sm" type="submit">Add</button>
+        </form>
+        <p class="error" id="setupError" role="alert" hidden></p>
+
+        <div class="len-row">
+          <span id="lenLabel">Cycle length</span>
+          <div class="stepper" role="group" aria-labelledby="lenLabel">
+            <button type="button" id="lenMinus" aria-label="Shorter cycle">−</button>
+            <output id="lenOut" aria-live="polite">28</output>
+            <button type="button" id="lenPlus" aria-label="Longer cycle">+</button>
+          </div>
+          <span class="muted">days</span>
+        </div>
+
+        <div class="logged">
+          <p class="logged-title">Logged period starts</p>
+          <ul class="chips" id="chips"></ul>
+          <p class="muted small" id="chipsEmpty">None yet.</p>
+          <button class="btn btn-ghost btn-sm" id="clearAll" type="button" hidden>Clear all</button>
+        </div>
+
+        <p class="fineprint">Saved only in this browser. Nothing is sent anywhere. Dates before your first logged start, and days far from a logged start, are estimates that assume your cycle repeats. Informational only, not medical advice.</p>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <span class="brand" data-brand>Jeune</span>
+      <nav aria-label="Footer">
+        <a href="index.html#cycle">The cycle</a><a href="index.html#blends">Blends</a><a href="tracker.html">Tracker</a><a href="index.html#order">Pre-order</a>
+      </nav>
+    </div>
+    <p class="fineprint">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+    <p class="fineprint">Preview site. Product images are design renders, pricing is placeholder, and no payment is taken.</p>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="tracker.js"></script>
+</body>
+</html>
