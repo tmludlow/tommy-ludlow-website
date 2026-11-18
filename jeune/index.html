@@ -23,10 +23,11 @@
       <a href="#cycle">The cycle</a>
       <a href="#blends">Blends</a>
       <a href="#included">What's included</a>
-      <a href="#tracker">Cycle tracker</a>
+      <a href="tracker.html">Cycle tracker</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-actions">
+      <a class="nav-tracker" href="tracker.html">Tracker</a>
       <button class="icon-btn" id="cartBtn" aria-label="Open bag" aria-haspopup="dialog">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
         <span class="badge" id="cartCount" hidden>0</span>
@@ -47,7 +48,7 @@
     <p class="lede reveal">A daily foundation and three phase blends, timed to the four weeks of your month.</p>
     <div class="cta-row reveal">
       <a class="btn btn-primary" href="#order">Pre-order</a>
-      <a class="link-arrow" href="#tracker" data-open-tracker>Find your day <span aria-hidden="true">›</span></a>
+      <a class="link-arrow" href="tracker.html">Find your day <span aria-hidden="true">›</span></a>
     </div>
   </div>
   <div class="container hero-media-wrap">
@@ -219,47 +220,6 @@
   </div>
 </section>
 
-<!-- TRACKER SECTION -->
-<section class="section tracker" id="tracker">
-  <div class="container center narrow">
-    <p class="eyebrow reveal">Cycle tracker</p>
-    <h2 class="reveal">Find your day.</h2>
-    <p class="lede reveal">Tell us when your last period began and we'll show where you are, and which blend to take today.</p>
-  </div>
-
-  <div class="container">
-    <div class="tracker-card reveal" id="trackerCard">
-      <div class="tracker-empty" id="trackerEmpty">
-        <p>Add the first day of your last period to see your day.</p>
-        <button class="btn btn-primary" type="button" data-open-tracker>Track my cycle</button>
-      </div>
-
-      <div class="tracker-result" id="trackerResult" hidden>
-        <div class="ring-wrap">
-          <svg viewBox="0 0 220 220" class="ring" id="ring" role="img" aria-label="Cycle ring"></svg>
-          <div class="ring-center">
-            <span class="ring-day" id="ringDay">Day 1</span>
-            <span class="ring-phase" id="ringPhase">Menstrual</span>
-          </div>
-        </div>
-        <div class="tracker-info">
-          <p class="eyebrow" id="trDate"></p>
-          <h3 id="trHeadline">Day 1</h3>
-          <p id="trTake" class="take"></p>
-          <p id="trNext" class="muted"></p>
-          <div class="strip" id="strip" aria-hidden="true"></div>
-          <div class="cta-row left">
-            <button class="btn btn-primary" type="button" id="trAdd">Add the kit to my bag</button>
-            <button class="btn btn-ghost" type="button" data-open-tracker>Edit dates</button>
-          </div>
-          <p class="fineprint" id="trNote"></p>
-        </div>
-      </div>
-    </div>
-    <p class="fineprint center">Informational only, not medical advice. The schedule assumes a regular natural cycle and is stored only in your browser.</p>
-  </div>
-</section>
-
 <!-- PRE-ORDER -->
 <section class="section order" id="order">
   <div class="container center narrow">
@@ -300,7 +260,7 @@
     <div class="reveal">
       <details>
         <summary>How do I know which blend to take?</summary>
-        <p>Use the cycle tracker. Enter the first day of your last period and your usual cycle length, and it shows today's blend. You take the Essential Blend every day, plus one phase blend.</p>
+        <p>Use the <a href="tracker.html">cycle tracker</a>. Enter the first day of your last period and your usual cycle length, and it shows today's blend. You take the Essential Blend every day, plus one phase blend.</p>
       </details>
       <details>
         <summary>What if my cycle is irregular, or I use hormonal contraception?</summary>
@@ -332,41 +292,13 @@
     <div class="footer-top">
       <span class="brand" data-brand>Jeune</span>
       <nav aria-label="Footer">
-        <a href="#cycle">The cycle</a><a href="#blends">Blends</a><a href="#tracker">Tracker</a><a href="#order">Pre-order</a>
+        <a href="#cycle">The cycle</a><a href="#blends">Blends</a><a href="tracker.html">Tracker</a><a href="#order">Pre-order</a>
       </nav>
     </div>
     <p class="fineprint">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
     <p class="fineprint">Preview site. Product images are design renders, pricing is placeholder, and no payment is taken.</p>
   </div>
 </footer>
-
-<!-- CYCLE TOOLBAR -->
-<div class="toolbar" id="toolbar" data-state="collapsed">
-  <button class="toolbar-summary" id="toolbarSummary" type="button" aria-expanded="false" aria-controls="toolbarForm">
-    <span class="tb-dot" id="tbDot"></span>
-    <span class="tb-text" id="tbText">Track your cycle</span>
-    <span class="tb-chev" aria-hidden="true">⌃</span>
-  </button>
-  <form class="toolbar-form" id="toolbarForm" novalidate>
-    <label class="field">
-      <span>First day of last period</span>
-      <input type="date" id="tbStart" required>
-    </label>
-    <label class="field">
-      <span>Cycle length</span>
-      <div class="stepper">
-        <button type="button" id="lenMinus" aria-label="Shorter cycle">−</button>
-        <output id="tbLen" aria-live="polite">28</output>
-        <button type="button" id="lenPlus" aria-label="Longer cycle">+</button>
-      </div>
-    </label>
-    <div class="toolbar-actions">
-      <button class="btn btn-primary btn-sm" type="submit">Show my day</button>
-      <button class="btn btn-ghost btn-sm" type="button" id="tbClear">Clear</button>
-    </div>
-    <p class="error" id="tbError" role="alert" hidden></p>
-  </form>
-</div>
 
 <!-- CART DRAWER -->
 <div class="scrim" id="scrim" hidden></div>
@@ -445,6 +377,7 @@
   </div>
 </div>
 
+<script src="config.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
